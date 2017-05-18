@@ -1,0 +1,224 @@
+{
+  "Tables": [
+    {
+      "Name": "competitions",
+      "Columns": [
+        {
+          "Name": "comp_id",
+          "Type": "serial",
+          "PrimaryKey": true,
+          "Reference": null,
+          "NotNull": false
+        },
+        {
+          "Name": "created_at",
+          "Type": "timestamptz",
+          "PrimaryKey": false,
+          "Reference": null,
+          "NotNull": false
+        },
+        {
+          "Name": "updated_at",
+          "Type": "timestamptz",
+          "PrimaryKey": false,
+          "Reference": null,
+          "NotNull": false
+        },
+        {
+          "Name": "caption",
+          "Type": "text",
+          "PrimaryKey": false,
+          "Reference": null,
+          "NotNull": false
+        },
+        {
+          "Name": "league",
+          "Type": "text",
+          "PrimaryKey": false,
+          "Reference": null,
+          "NotNull": false
+        },
+        {
+          "Name": "comp_year",
+          "Type": "text",
+          "PrimaryKey": false,
+          "Reference": null,
+          "NotNull": false
+        },
+        {
+          "Name": "matchday",
+          "Type": "smallint",
+          "PrimaryKey": false,
+          "Reference": null,
+          "NotNull": false
+        },
+        {
+          "Name": "num_matchdays",
+          "Type": "smallint",
+          "PrimaryKey": false,
+          "Reference": null,
+          "NotNull": false
+        },
+        {
+          "Name": "num_teams",
+          "Type": "smallint",
+          "PrimaryKey": false,
+          "Reference": null,
+          "NotNull": false
+        },
+        {
+          "Name": "num_games",
+          "Type": "smallint",
+          "PrimaryKey": false,
+          "Reference": null,
+          "NotNull": false
+        }
+      ]
+    },
+    {
+      "Name": "fixtures",
+      "Columns": [
+        {
+          "Name": "fix_id",
+          "Type": "serial",
+          "PrimaryKey": true,
+          "Reference": null,
+          "NotNull": false
+        },
+        {
+          "Name": "created_at",
+          "Type": "timestamptz",
+          "PrimaryKey": false,
+          "Reference": null,
+          "NotNull": false
+        },
+        {
+          "Name": "updated_at",
+          "Type": "timestamptz",
+          "PrimaryKey": false,
+          "Reference": null,
+          "NotNull": false
+        },
+        {
+          "Name": "comp_id",
+          "Type": "bigint",
+          "PrimaryKey": false,
+          "Reference": {
+            "Table": "competitions",
+            "Column": "comp_id"
+          },
+          "NotNull": false
+        },
+        {
+          "Name": "start_time",
+          "Type": "timestamptz",
+          "PrimaryKey": false,
+          "Reference": null,
+          "NotNull": false
+        },
+        {
+          "Name": "end_time",
+          "Type": "timestamptz",
+          "PrimaryKey": false,
+          "Reference": null,
+          "NotNull": false
+        },
+        {
+          "Name": "status",
+          "Type": "smallint",
+          "PrimaryKey": false,
+          "Reference": null,
+          "NotNull": false
+        },
+        {
+          "Name": "broadcast",
+          "Type": "text",
+          "PrimaryKey": false,
+          "Reference": null,
+          "NotNull": false
+        },
+        {
+          "Name": "home_team",
+          "Type": "bigint",
+          "PrimaryKey": false,
+          "Reference": {
+            "Table": "teams",
+            "Column": "team_id"
+          },
+          "NotNull": false
+        },
+        {
+          "Name": "away_team",
+          "Type": "bigint",
+          "PrimaryKey": false,
+          "Reference": {
+            "Table": "teams",
+            "Column": "team_id"
+          },
+          "NotNull": false
+        },
+        {
+          "Name": "home_goals",
+          "Type": "smallint",
+          "PrimaryKey": false,
+          "Reference": null,
+          "NotNull": false
+        },
+        {
+          "Name": "away_goals",
+          "Type": "smallint",
+          "PrimaryKey": false,
+          "Reference": null,
+          "NotNull": false
+        },
+        {
+          "Name": "home_htgoals",
+          "Type": "smallint",
+          "PrimaryKey": false,
+          "Reference": null,
+          "NotNull": false
+        },
+        {
+          "Name": "away_htgoals",
+          "Type": "smallint",
+          "PrimaryKey": false,
+          "Reference": null,
+          "NotNull": false
+        }
+      ]
+    },
+    {
+      "Name": "teams",
+      "Columns": [
+        {
+          "Name": "team_id",
+          "Type": "serial",
+          "PrimaryKey": true,
+          "Reference": null,
+          "NotNull": false
+        },
+        {
+          "Name": "team_name",
+          "Type": "text",
+          "PrimaryKey": false,
+          "Reference": null,
+          "NotNull": false
+        },
+        {
+          "Name": "short_name",
+          "Type": "text",
+          "PrimaryKey": false,
+          "Reference": null,
+          "NotNull": false
+        },
+        {
+          "Name": "crest_url",
+          "Type": "text",
+          "PrimaryKey": false,
+          "Reference": null,
+          "NotNull": false
+        }
+      ]
+    }
+  ]
+}

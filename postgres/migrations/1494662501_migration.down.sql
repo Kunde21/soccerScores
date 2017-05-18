@@ -1,0 +1,9 @@
+BEGIN TRANSACTION;
+
+DROP TABLE fixtures;
+
+DROP TABLE teams;
+
+DROP TABLE competitions;
+
+COMMIT;
